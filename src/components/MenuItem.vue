@@ -1,11 +1,21 @@
 <template>
-$END$
+  <li class="nav-item active">
+    <a class="nav-link" href="#" v-if="labelText"> {{ labelText }} </a>
+    <a class="btn btn-success" href="#" v-else>Login</a>
+  </li>
+
 </template>
 
-<script>
-export default {
-name: "MenuItem"
-}
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component'
+
+@Options({
+  props: {
+    labelText: String
+  }
+})
+
+export default class MenuItem extends Vue {}
 </script>
 
 <style scoped>

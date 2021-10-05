@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import FormTextInput from '../components/FormTextInput.vue'
-import PasswordInput from '@/components/PasswordInput'
-import CheckboxInput from '@/components/CheckboxInput'
-import SubmitButton from '@/components/SubmitButton'
+import FormTextInput from './FormTextInput.vue'
+import PasswordInput from '@/components/LoginForm/PasswordInput'
+import CheckboxInput from '@/components/LoginForm/CheckboxInput'
+import SubmitButton from '@/components/LoginForm/SubmitButton'
 
 export default {
   name: 'Card',
