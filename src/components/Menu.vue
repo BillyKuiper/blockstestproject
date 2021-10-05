@@ -17,6 +17,10 @@
           @click="aboutClicked()"
           class="item"
           labelText="About"/>
+        <MenuItem
+          @click="productClicked()"
+          class="item"
+          labelText="Products"/>
       </ul>
     </div>
     <form class="form-inline">
@@ -45,6 +49,9 @@ const Menu = defineComponent({
     },
     loginClicked () {
       this.$router.push('/login')
+    },
+    productClicked(){
+      this.$router.push('/products')
     }
   }
 })
@@ -55,5 +62,11 @@ export default Menu
 <style scoped>
 form{
   list-style-type: none;
+}
+nav a{
+  margin-left: 10px;
+}
+nav form{
+  margin-right: 10px;
 }
 </style>

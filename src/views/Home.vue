@@ -1,26 +1,79 @@
 <template>
   <div class="home">
-    <h1>Welcome to the homepage!</h1>
+    <h1 class="title">Welcome to the homepage!</h1>
     <div class="container">
-      <img src="../assets/transport.jpg" alt="test"/>
+      <img src="@/assets/transport.jpg" alt="">
     </div>
-    <div class="row">
-      <div class="col d-flex justify-content-center">
-        <CategoryCard/>
+    <div class="content-container">
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <CategoryCard
+          labelText="Nonsense"
+          image="grass.png"
+          />
+        </div>
+        <div class="col d-flex justify-content-center">
+          <CategoryCard
+          labelText="Valuable"
+          image="gold.png"
+          />
+        </div>
+        <div class="col d-flex justify-content-center">
+          <CategoryCard
+          labelText="Coins"
+          image="emerald.png"
+          />
+        </div>
+        <div class="col d-flex justify-content-center">
+          <CategoryCard
+          labelText="Fosil Fuels"
+          image="coal.png"
+          />
+        </div>
+        <div class="col d-flex justify-content-center">
+          <CategoryCard
+          labelText="Fluids"
+          image="water.png"
+          />
+        </div>
+        <div class="col d-flex justify-content-center">
+          <CategoryCard
+          labelText="All"
+          image="all.png"
+          />
+        </div>
       </div>
-      <div class="col d-flex justify-content-center">
-        <CategoryCard/>
+
+      <div class="row" style="border: 1px">
+        <div class="col-3">
+        <ProductCard
+        ProductImage="emerald.png"
+        ProductDescription="Shiny as ever"
+        ProductTitle="Emeralds"
+        />
+        </div>
+        <div class="col-3">
+          <ProductCard
+            ProductImage="gold.png"
+            ProductDescription="Pure Gold."
+            ProductTitle="Gold"
+          />
+        </div>
+        <div class="col-3">
+          <ProductCard
+            ProductImage="coal.png"
+            ProductDescription="Got BBQ?"
+            ProductTitle="Coal"
+          />
+        </div>
+        <div class="col-3">
+          <ProductCard
+            ProductImage="water.png"
+            ProductDescription="Water that flows within one m3!"
+            ProductTitle="H2O"
+          />
+        </div>
       </div>
-      <div class="col d-flex justify-content-center">
-        <CategoryCard/>
-      </div>
-      <div class="col d-flex justify-content-center">
-        <CategoryCard/>
-      </div>
-    </div>
-    <div class="row" style="border: 1px">
-      <div class="col-8">col-8</div>
-      <div class="col-4">col-4</div>
     </div>
   </div>
 </template>
@@ -29,11 +82,13 @@
 import { Options, Vue } from 'vue-class-component'
 import Menu from '@/components/Menu.vue'
 import CategoryCard from '@/components/CategoryCard.vue'
+import ProductCard from '@/components/ProductCard.vue'
 
 @Options({
   components: {
     Menu,
-    CategoryCard
+    CategoryCard,
+    ProductCard
   }
 })
 export default class Home extends Vue {}
@@ -45,11 +100,22 @@ export default class Home extends Vue {}
 
 .container {
   width: 40%;
-  background: #777;
   margin: 0 auto;
 }
 .row{
   margin-top: 10px;
   margin-right: 0;
+  margin-left: 10px;
+}
+col{
+  margin-left: auto;
+  margin-right: auto;
+}
+.content-container{
+  margin-left: auto;
+  margin-right: auto;
+}
+.title{
+  text-align: center;
 }
 </style>
