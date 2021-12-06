@@ -37,7 +37,7 @@ jobs:
       with:
         image: billykuiper/blocks-testproject
         registry: docker.io
-        dockerfile: .Dockerfile
+        dockerfile: /
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     
