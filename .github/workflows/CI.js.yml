@@ -32,11 +32,10 @@ jobs:
     #node 16.x. loopt hier vast
     - run: npm test
       
-    - uses: mr-smithers-excellent/docker-build-push@v5
-      name: Build & push Docker image
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: billykuiper/blocks-testproject
         registry: docker.io
-        dockerfile: dockerimage.ci
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
