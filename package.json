@@ -10,6 +10,7 @@
     "start": "npm run serve"
   },
   "dependencies": {
+    "@vue/cli-service": "~4.5.0",
     "@vue/cli-plugin-typescript": "^4.5.13",
     "axios": "^0.22.0",
     "bootstrap": "^5.1.1",
