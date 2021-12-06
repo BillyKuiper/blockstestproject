@@ -1,8 +1,16 @@
 #getting base image ubuntu
 FROM ubuntu
+WORKDIR /app
 
-MAINTAINER billykuiper pal <456181@student.fontys.nl>
+COPY package*.json ./
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y nodejs
 
-CMD ["echo", "Hello World...! from my first docker image!"]
+COPY . .
+
+ENV PORT=8080
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
