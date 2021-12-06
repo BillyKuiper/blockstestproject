@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <button @click="setShoppingCart()"></button>
     <h1 class="title">Welcome to the homepage!</h1>
     <div class="container">
       <img src="@/assets/transport.jpg" alt="">
@@ -91,6 +92,8 @@ import ProductCard from '@/components/ProductCard.vue'
     ProductCard
   }
 })
+
+
 export default class Home extends Vue {}
 </script>
 <style scoped>

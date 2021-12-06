@@ -2,25 +2,26 @@
   <div id="nav">
     <Menu></Menu>
   </div>
-  <div>
+  <div class="content">
     <router-view/>
   </div>
   <Footer/>
 </template>
-<script lang="ts">
+
+<script>
 import Menu from '@/components/Menu.vue'
 import Footer from '@/components/Footer.vue'
+import Product from '@/classes/Product.ts'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Menu,
     Footer
   }
 }
 </script>
-<style>
-  body{
-    width: 100%;
-  }
+
+<style scoped>
+
 </style>

@@ -1,32 +1,29 @@
 <template>
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">#ID</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Product Price</th>
-      <th scope="col">Product Description</th>
-      <th scope="col">Adding Date</th>
-      <th scope="col">Image (Path)</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr v-for="post in posts">
-      <th scope="row">{{ post.productId }}</th>
-      <td>{{ post.productName }}</td>
-      <td>{{ post.productPrice }}</td>
-      <td>{{ post.description }}</td>
-      <td>{{ post.productAddingDate }}</td>
-      <td>{{ post.productImage }}</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="container">
+      <div v-for="post in posts">
+        <ProductCard
+          @add-to-shoppingcart="addShoppingCart(post)"
+          :ProductImage="post.productImage"
+          :ProductDescription="post.productDescription"
+          :ProductTitle="post.productName"
+          :ProductAddingDate="post.productAddingDate"
+          :ProductPrice="post.productPrice"
+          :ProductId="post.productId"
+        />
+      </div>
+    </div>
 </template>
 
 <script>
 import axios from 'axios'
+import ProductCard from '@/components/ProductCard.vue'
+import Shoppingcart from '@/components/Shoppingcart.vue'
+
 export default {
   name: 'Product',
+  components:{
+    ProductCard
+  },
   data(){
     return{
       posts: [],
@@ -36,20 +33,31 @@ export default {
     getPosts(){
        axios.get('https://localhost:44387/product')
       .then((response) => {
-        console.log(response.data)
         this.posts = response.data
       })
-      .catch((error) => {
-        console.log(error)
-      })
+    },
+    addShoppingCart(product){
+      //modal laten tonen met winkelwagen
+      console.log(product);
+      if (product){
+        console.log(product);
+        Shoppingcart.methods.setShoppingCart(product);
+      }
     }
   },
   created: function(){
     this.getPosts()
-  }
+  },
+
 }
 </script>
 
 <style scoped>
-
+.container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.container > div {
+padding: 10px;
+}
 </style>

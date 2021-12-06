@@ -81,15 +81,9 @@
       </div>
     </section>
     <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Blocks.Com</a>
-    </div>
-    <!-- Copyright -->
   </footer>
   <!-- Footer -->
+  <div/>
 </template>
 
 <script>
@@ -104,8 +98,5 @@ export default {
 </script>
 
 <style scoped>
-footer{
-  margin-top: 10px;
-}
 
 </style>
