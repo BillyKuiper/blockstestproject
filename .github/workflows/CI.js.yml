@@ -35,7 +35,7 @@ jobs:
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
       with:
-        image: billykuiper/blocks-testproject
+        image: billykuiper/blocks-testproject:tagname
         registry: docker.io
         dockerfile: /
         username: ${{ secrets.DOCKER_USERNAME }}
